@@ -1,0 +1,20 @@
+---
+const {title, image, date, schedule} = Astro.props.event
+const bg = `url(${image})`
+---
+<article class="card card-body d-flex text-center">
+  <div class="info rounded p-2">
+    <h2>{title}</h3>
+    <h4>{date} <br> {schedule}</h4>
+    <a class="btn btn-success">Mas info...</a>
+  </div>
+</article>
+
+<style define:vars={{bg}}>
+  .card {
+    background-image: var(--bg);
+  }
+  .info {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+</style>
