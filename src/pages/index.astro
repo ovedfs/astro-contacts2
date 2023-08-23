@@ -1,0 +1,21 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import contacts from '../data/contacts.json'
+import ContactCard from "../components/ContactCard.astro";
+//console.log(contacts);
+
+---
+
+<AppLayout title="Home">
+	<h1 class="mt-4">Home</h1>
+	<div class="row">
+	{
+		contacts.map(contact => (
+			<div class="col-md-6 col-lg-4 mb-4">
+				<ContactCard {contact} />
+			</div>
+		))
+	}	
+	</div>
+	
+</AppLayout>

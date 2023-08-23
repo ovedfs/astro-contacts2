@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Juan",
+        "lastname": "Pérez",
+        "email": "juan@example.com",
+        "phone": "123-456-7890",
+        "photo": "/images/juan.jpg",
+        "username": "juan"
+    },
+    {
+        "id": 2,
+        "name": "María",
+        "lastname": "González",
+        "email": "maria@example.com",
+        "phone": "987-654-3210",
+        "photo": "/images/maria.jpg",
+        "username": "maria"
+    },
+    {
+        "id": 3,
+        "name": "Carlos",
+        "lastname": "López",
+        "email": "carlos@example.com",
+        "phone": "555-123-4567",
+        "photo": "/images/carlos.jpg",
+        "username": "carlos"
+    },
+    {
+        "id": 4,
+        "name": "Ana",
+        "lastname": "Ramírez",
+        "email": "ana@example.com",
+        "phone": "777-888-9999",
+        "photo": "/images/ana.jpg",
+        "username": "ana"
+    },
+    {
+        "id": 5,
+        "name": "Luis",
+        "lastname": "Martínez",
+        "email": "luis@example.com",
+        "phone": "111-222-3333",
+        "photo": "/images/luis.jpg",
+        "username": "luis"
+    },
+    {
+        "id": 6,
+        "name": "Laura",
+        "lastname": "Díaz",
+        "email": "laura@example.com",
+        "phone": "444-555-6666",
+        "photo": "/images/laura.jpg",
+        "username": "laura"
+    },
+    {
+        "id": 7,
+        "name": "Roberto",
+        "lastname": "Hernández",
+        "email": "roberto@example.com",
+        "phone": "999-888-7777",
+        "photo": "/images/roberto.jpg",
+        "username": "roberto"
+    },
+    {
+        "id": 8,
+        "name": "Sofía",
+        "lastname": "Vargas",
+        "email": "sofia@example.com",
+        "phone": "666-777-8888",
+        "photo": "/images/sofia.jpg",
+        "username": "sofia"
+    },
+    {
+        "id": 9,
+        "name": "Pedro",
+        "lastname": "Fernández",
+        "email": "pedro@example.com",
+        "phone": "222-333-4444",
+        "photo": "/images/pedro.jpg",
+        "username": "pedro"
+    },
+    {
+        "id": 10,
+        "name": "Elena",
+        "lastname": "García",
+        "email": "elena@example.com",
+        "phone": "888-999-0000",
+        "photo": "/images/elena.jpg",
+        "username": "elena"
+    }
+]

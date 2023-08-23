@@ -1,0 +1,30 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro'
+import ContactCardDetails from '../../components/ContactCardDetails.astro'
+import contacts from '../../data/contacts.json'
+
+// export function getStaticPaths() {
+//   return contacts.map(({username, name, lastname, email, photo, phone}) => {
+//     return {
+//       params: { username },
+//       props:  {username, name, lastname, email, photo, phone},
+//     };
+//   });
+// }
+
+export function getStaticPaths() {
+  return contacts.map((contact) => {
+    return {
+      params: { username: contact.username },
+      props:  {contact: contact},
+    };
+  });
+}
+
+const {name, lastname, email, photo, phone} = Astro.props.contact;
+---
+
+<AppLayout>
+  <h1 class="my-4">Detalle del contacto</h1>
+  <ContactCardDetails contact={{name, lastname, email, photo, phone}} />
+</AppLayout>
