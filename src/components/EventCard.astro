@@ -1,20 +1,74 @@
 ---
-const {title, image, date, schedule} = Astro.props.event
+import dayjs from "dayjs"
+import "dayjs/locale/es"
+dayjs.locale('es')
+
+const {id, title, image, date, schedule, description} = Astro.props.event
 const bg = `url(${image})`
+
+const eventDate = dayjs(date)
 ---
-<article class="card card-body d-flex text-center">
-  <div class="info rounded p-2">
-    <h2>{title}</h3>
-    <h4>{date} <br> {schedule}</h4>
-    <a class="btn btn-success">Mas info...</a>
+<article class="card card-body text-center border border-0">
+  <div class="info rounded d-flex flex-column justify-content-between">
+    <h2>{title}</h2>
+
+    <div class="">
+      <p class="fw-light text-lowercase my-0 py-0 d-flex justify-content-between align-items-center bg-dark bg-opacity-50 rounded-top p-2">
+        <i class="fa-solid fa-calendar-days"></i>
+        {eventDate.format("dddd DD [de] MMMM [de] YYYY")}
+      </p>
+      <p class="my-0 py-0 d-flex justify-content-between align-items-center bg-dark bg-opacity-50 rounded-bottom p-2">
+        <i class="fa-solid fa-clock"></i> {schedule}
+      </p>
+      <a 
+        data-id={id} 
+        data-title={title} 
+        data-description={description} 
+        data-image={image} 
+        class="btn btn-show btn-danger fs-5 mt-2 w-100"
+        data-bs-toggle="modal" 
+        data-bs-target="#eventModal"
+      >Mas info...</a>
+    </div>
   </div>
 </article>
 
 <style define:vars={{bg}}>
   .card {
-    background-image: var(--bg);
+    position: relative;
   }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    border-radius: 0.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg);
+    filter: sepia(50%);
+  }
+  
   .info {
-    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-shadow: 1px 1px 2px #444;
+    height: 300px;
   }
 </style>
+
+<script>
+  const eventModal = document.getElementById('eventModal');
+
+  document.querySelectorAll('.btn-show').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id
+      const title = btn.dataset.title
+      const description = btn.dataset.description
+      const image = btn.dataset.image
+      eventModal.querySelector('#eventModalLabel').innerText = title
+      eventModal.querySelector('#eventModalDescription').innerText = description
+      eventModal.querySelector('#eventModalImg').src = image
+    })
+  })
+</script>

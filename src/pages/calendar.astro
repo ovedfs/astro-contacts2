@@ -1,12 +1,13 @@
 ---
 import AppLayout from "../layouts/AppLayout.astro";
 import EventCard from "../components/EventCard.astro";
+import Modal from "../components/Modal.astro";
 import events from '../data/events.json'
 
 ---
 
 <AppLayout>
-  <h1>Calendario de Eventos</h1>
+  <h1 class="mt-4">Calendario de Eventos</h1>
   <div class="row">
     {
       events.map(event => (
@@ -16,4 +17,5 @@ import events from '../data/events.json'
       ))
     }
   </div>
+  <Modal />
 </AppLayout>
